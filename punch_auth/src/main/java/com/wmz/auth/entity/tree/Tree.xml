@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><workspace id="workspacemh2pnnqk6h1nm890">
+<project id="e9cf4dd1a2f543eeafdef24a86ac9f9d" name="web" status="0" title="web">
+<page id="9463f236ab65453f9d63338bb3745b16" name="template-1" status="0" title="template-1"/>
+<page id="F82B6D441EBBB9262E1AF2322206B9FD" name="新建页面_2" status="-1" title="newPage_2"/>
+<bundle id="13177EE8E5E43C0CC5C2564716D5F1BB" name="新建目录_2" status="1" title="newBundle_2">
+<page id="0943FD4979CBE84CDA8E610FC5CDDF4E" name="新建页面_3" status="1" title="newPage_3"/>
+<page id="23445B3113F7270B075B4FA8CBD096E7" name="新建页面_4" status="-1" title="newPage_4"/>
+<bundle id="E0C47C681A85D5063C31A29CFBE38CDE" name="新建目录_5" status="1" title="newBundle_5">
+<page id="A9B031F89261ECEB0FA7EC7EACB1ACAB" name="新建页面_6" status="1" title="newPage_6"/>
+<bundle id="C35CD63C33E490E4549E7561F61CA7E3" name="新建目录_7" status="1" title="newBundle_7">
+<page id="2086A89F84F1644CA56FEBBCDECA7FD0" name="新建页面_8" status="1" title="newPage_8"/>
+</bundle></bundle></bundle><bundle id="A005E22233C6027373294A72CC71CB17" name="新建目录_9" status="1" title="newBundle_9">
+<page id="2B4D8CC6283F95218229883F517C36EF" name="新建页面_10" status="1" title="newPage_10"/>
+</bundle></project></workspace>

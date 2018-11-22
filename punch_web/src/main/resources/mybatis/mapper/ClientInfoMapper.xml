@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wmz.web.dao.ClientInfoMapper">
+  <resultMap id="BaseResultMap" type="com.wmz.web.entity.ClientInfo">
+    <id column="client_id" jdbcType="VARCHAR" property="clientId" />
+    <result column="connected" jdbcType="INTEGER" property="connected" />
+    <result column="most_sign_bits" jdbcType="BIGINT" property="mostSignBits" />
+    <result column="least_sign_bits" jdbcType="BIGINT" property="leastSignBits" />
+    <result column="last_connected_date" jdbcType="TIMESTAMP" property="lastConnectedDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    client_id, connected, most_sign_bits, least_sign_bits, last_connected_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from clientinfo
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from clientinfo
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wmz.web.entity.ClientInfo">
+    insert into clientinfo (client_id, connected, most_sign_bits, 
+      least_sign_bits, last_connected_date)
+    values (#{clientId,jdbcType=VARCHAR}, #{connected,jdbcType=INTEGER}, #{mostSignBits,jdbcType=BIGINT}, 
+      #{leastSignBits,jdbcType=BIGINT}, #{lastConnectedDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wmz.web.entity.ClientInfo">
+    insert into clientinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="clientId != null">
+        client_id,
+      </if>
+      <if test="connected != null">
+        connected,
+      </if>
+      <if test="mostSignBits != null">
+        most_sign_bits,
+      </if>
+      <if test="leastSignBits != null">
+        least_sign_bits,
+      </if>
+      <if test="lastConnectedDate != null">
+        last_connected_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="clientId != null">
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="connected != null">
+        #{connected,jdbcType=INTEGER},
+      </if>
+      <if test="mostSignBits != null">
+        #{mostSignBits,jdbcType=BIGINT},
+      </if>
+      <if test="leastSignBits != null">
+        #{leastSignBits,jdbcType=BIGINT},
+      </if>
+      <if test="lastConnectedDate != null">
+        #{lastConnectedDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wmz.web.entity.ClientInfo">
+    update clientinfo
+    <set>
+      <if test="connected != null">
+        connected = #{connected,jdbcType=INTEGER},
+      </if>
+      <if test="mostSignBits != null">
+        most_sign_bits = #{mostSignBits,jdbcType=BIGINT},
+      </if>
+      <if test="leastSignBits != null">
+        least_sign_bits = #{leastSignBits,jdbcType=BIGINT},
+      </if>
+      <if test="lastConnectedDate != null">
+        last_connected_date = #{lastConnectedDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wmz.web.entity.ClientInfo">
+    update clientinfo
+    set connected = #{connected,jdbcType=INTEGER},
+      most_sign_bits = #{mostSignBits,jdbcType=BIGINT},
+      least_sign_bits = #{leastSignBits,jdbcType=BIGINT},
+      last_connected_date = #{lastConnectedDate,jdbcType=TIMESTAMP}
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </update>
+</mapper>

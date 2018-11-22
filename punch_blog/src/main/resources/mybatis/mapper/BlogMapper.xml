@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wmz.blog.dao.BlogMapper">
+	<resultMap id="BaseResultMap" type="com.wmz.blog.entity.Blog">
+		<id column="diary_id" property="diaryId" jdbcType="VARCHAR" />
+		<result column="diary_name" property="diaryName" jdbcType="VARCHAR" />
+		<result column="subhead" property="subhead" jdbcType="VARCHAR" />
+		<result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+		<result column="created_name" property="createdName" jdbcType="VARCHAR" />
+		<result column="created_dt" property="createdDt" jdbcType="TIMESTAMP" />
+		<result column="updated_dt" property="updatedDt" jdbcType="TIMESTAMP" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="deleted" property="deleted" jdbcType="INTEGER" />
+		<result column="version" property="version" jdbcType="INTEGER" />
+		<result column="ext1" property="ext1" jdbcType="VARCHAR" />
+		<result column="ext2" property="ext2" jdbcType="VARCHAR" />
+		<result column="ext3" property="ext3" jdbcType="VARCHAR" />
+		<result column="ext4" property="ext4" jdbcType="VARCHAR" />
+		<result column="ext5" property="ext5" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="ResultMapWithBLOBs" type="com.wmz.blog.entity.Blog"
+		extends="BaseResultMap">
+		<result column="content" property="content" jdbcType="LONGVARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		diary_id, diary_name, subhead, created_by, created_name, created_dt,
+		updated_dt, type, deleted,
+		version, ext1, ext2, ext3, ext4, ext5
+	</sql>
+	<sql id="Blob_Column_List">
+		content
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from diary
+		where diary_id = #{diaryId,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		update diary set deleted=1 where diary_id =
+		#{diaryId,jdbcType=VARCHAR}
+	</delete>
+
+	<!-- delete from diary where diary_id = #{diaryId,jdbcType=VARCHAR} -->
+
+	<delete id="delete" parameterType="com.wmz.blog.entity.Blog">
+		update diary set deleted=1 where diary_id =
+		#{diaryId,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="insert" parameterType="com.wmz.blog.entity.Blog">
+		<selectKey keyProperty="diaryId" resultType="String" order="BEFORE">
+			select replace(uuid(),'-','') as diaryId from dual
+		</selectKey>
+		insert into diary
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			diary_id,
+			<if test="diaryName != null">
+				diary_name,
+			</if>
+			<if test="createdBy != null">
+				created_by,
+			</if>
+			<if test="createdName != null">
+				created_name,
+			</if>
+			<if test="subhead != null">
+				subhead,
+			</if>
+			<if test="createdDt != null">
+				created_dt,
+			</if>
+			<if test="updatedDt != null">
+				updated_dt,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="deleted != null">
+				deleted,
+			</if>
+			<if test="version != null">
+				version,
+			</if>
+			<if test="ext1 != null">
+				ext1,
+			</if>
+			<if test="ext2 != null">
+				ext2,
+			</if>
+			<if test="ext3 != null">
+				ext3,
+			</if>
+			<if test="ext4 != null">
+				ext4,
+			</if>
+			<if test="ext5 != null">
+				ext5,
+			</if>
+			<if test="content != null">
+				content,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="diaryId != null">
+				#{diaryId,jdbcType=VARCHAR},
+			</if>
+			<if test="diaryName != null">
+				#{diaryName,jdbcType=VARCHAR},
+			</if>
+			<if test="createdBy != null">
+				#{createdBy,jdbcType=VARCHAR},
+			</if>
+			<if test="createdName != null">
+				#{createdName,jdbcType=VARCHAR},
+			</if>
+			<if test="subhead != null">
+				#{subhead,jdbcType=VARCHAR},
+			</if>
+			<if test="createdDt != null">
+				#{createdDt,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updatedDt != null">
+				#{updatedDt,jdbcType=TIMESTAMP},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=INTEGER},
+			</if>
+			<if test="deleted != null">
+				#{deleted,jdbcType=INTEGER},
+			</if>
+			<if test="version != null">
+				#{version,jdbcType=INTEGER},
+			</if>
+			<if test="ext1 != null">
+				#{ext1,jdbcType=VARCHAR},
+			</if>
+			<if test="ext2 != null">
+				#{ext2,jdbcType=VARCHAR},
+			</if>
+			<if test="ext3 != null">
+				#{ext3,jdbcType=VARCHAR},
+			</if>
+			<if test="ext4 != null">
+				#{ext4,jdbcType=VARCHAR},
+			</if>
+			<if test="ext5 != null">
+				#{ext5,jdbcType=VARCHAR},
+			</if>
+			<if test="content != null">
+				#{content,jdbcType=LONGVARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="update" parameterType="com.wmz.blog.entity.Blog">
+		update diary set VERSION=VERSION+1
+		<if test="diaryName != null">
+			,diary_name = #{diaryName,jdbcType=VARCHAR}
+		</if>
+		<if test="subhead != null">
+			,subhead = #{subhead,jdbcType=VARCHAR}
+		</if>
+		<if test="createdBy != null">
+			,created_by = #{createdBy,jdbcType=VARCHAR}
+		</if>
+		<if test="createdName != null">
+			,created_name = #{createdName,jdbcType=VARCHAR}
+		</if>
+		<if test="createdDt != null">
+			,created_dt = #{createdDt,jdbcType=TIMESTAMP}
+		</if>
+		<if test="updatedDt != null">
+			,updated_dt = #{updatedDt,jdbcType=TIMESTAMP}
+		</if>
+		<if test="type != null">
+			,type = #{type,jdbcType=INTEGER}
+		</if>
+		<if test="deleted != null">
+			,deleted = #{deleted,jdbcType=INTEGER}
+		</if>
+		<if test="version != null">
+			,version = #{version,jdbcType=INTEGER}
+		</if>
+		<if test="ext1 != null">
+			,ext1 = #{ext1,jdbcType=VARCHAR}
+		</if>
+		<if test="ext2 != null">
+			,ext2 = #{ext2,jdbcType=VARCHAR}
+		</if>
+		<if test="ext3 != null">
+			,ext3 = #{ext3,jdbcType=VARCHAR}
+		</if>
+		<if test="ext4 != null">
+			,ext4 = #{ext4,jdbcType=VARCHAR}
+		</if>
+		<if test="ext5 != null">
+			,ext5 = #{ext5,jdbcType=VARCHAR}
+		</if>
+		<if test="content != null">
+			,content = #{content,jdbcType=LONGVARCHAR}
+		</if>
+		where diary_id = #{diaryId,jdbcType=VARCHAR} and VERSION =
+		#{version,jdbcType=INTEGER}
+	</update>
+
+	<select id="find" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from diary
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="diaryId != null">
+				AND diary_id = #{diaryId,jdbcType=VARCHAR}
+			</if>
+			<if test="diaryName != null and diaryName !=''">
+				AND diary_name like '%${diaryName}%'
+			</if>
+			<if test="createdBy != null">
+				AND created_by = #{createdBy,jdbcType=VARCHAR}
+			</if>
+			<if test="createdName != null">
+				AND created_name = #{createdName,jdbcType=VARCHAR}
+			</if>
+			<if test="createdDt != null">
+				AND created_dt = #{createdDt,jdbcType=TIMESTAMP}
+			</if>
+			<if test="updatedDt != null">
+				AND updated_dt = #{updatedDt,jdbcType=TIMESTAMP}
+			</if>
+			<if test="type != null">
+				AND type = #{type,jdbcType=INTEGER}
+			</if>
+			<if test="deleted != null">
+				AND deleted = #{deleted,jdbcType=INTEGER}
+			</if>
+			<if test="version != null">
+				AND version = #{version,jdbcType=INTEGER}
+			</if>
+			<if test="ext1 != null">
+				AND ext1 = #{ext1,jdbcType=VARCHAR}
+			</if>
+			<if test="ext2 != null">
+				AND ext2 = #{ext2,jdbcType=VARCHAR}
+			</if>
+			<if test="ext3 != null">
+				AND ext3 = #{ext3,jdbcType=VARCHAR}
+			</if>
+			<if test="ext4 != null">
+				AND ext4 = #{ext4,jdbcType=VARCHAR}
+			</if>
+			<if test="ext5 != null">
+				AND ext5 = #{ext5,jdbcType=VARCHAR}
+			</if>
+			<if test="content != null">
+				AND content = #{content,jdbcType=LONGVARCHAR}
+			</if>
+		</trim>
+		<if test="order != null">
+			ORDER BY ${order}
+		</if>
+		<if test="order == null">
+			ORDER BY created_dt DESC
+		</if>
+	</select>
+</mapper>

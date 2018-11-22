@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<classPathEntry location="E:\RunPu\.m2\repository\mysql\mysql-connector-java\5.1.35\mysql-connector-java-5.1.35.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
+		
+		<!-- 注释-->	
+		<commentGenerator>
+		<!-- 是否去除自动生成的注释 true：是 ： false:否 --> 
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/super_space" 
+			userId="root" password="123" />
+
+		<!--允许数值类型转换成不同类型,否则都映射为BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 模型文件 -->
+		<javaModelGenerator targetPackage="com.wmz.web.entity" targetProject="punch_web/src/main/java" >
+			<property name="enableSubPackages" value="true" /> 
+			<!--  当为true时，产生的代码文件将按照schema产生子文件夹 -->
+			<property name="trimStrings" value="true" /> 
+			<!--  set变量时自动剔除空白 -->
+		</javaModelGenerator>
+
+		<!-- XML映射文件 -->
+		<sqlMapGenerator targetPackage="main.resources.mybatis.mapper" targetProject="punch_web/src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+		<!-- DAO文件(mapper接口) -->
+		<javaClientGenerator targetPackage="com.wmz.web.dao" targetProject="punch_web/src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!-- 数据库表 -->
+	
+		<table tableName="clientinfo" domainObjectName="ClientInfo"
+			   enableCountByExample="false" enableUpdateByExample="false" 
+			   enableDeleteByExample="false" enableSelectByExample="false" 
+			   selectByExampleQueryId="true">
+			
+			<!-- 忽略列，不生成bean 字段 -->
+            <!--ignoreColumn column="FRED" /-->
+            <!-- 指定列的java数据类型 -->
+            <!--columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /--> 
+            
+		</table>
+		
+		
+         
+
+	</context>
+</generatorConfiguration>

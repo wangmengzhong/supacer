@@ -1,0 +1,26 @@
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.wmz.auth.entity
+server:
+  port: 8763
+spring:
+  profiles:
+    active:  test
+  application:
+    name: service-auth
+ribbon:
+  MaxAutoRetiresNextServer: 2  #换服务次数
+  MaxAutoRetires: 2  #重试次数
+  ConnectTimeOut: 6000
+  ReadTimeOut: 6000
+  OkToRetureOnAllOperations: true
+hystrix:
+  enabled:  true  #熔断开启
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+          strategy: SEMAPHORE

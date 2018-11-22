@@ -1,0 +1,12 @@
+server:
+  port: 8761
+eureka:
+  server:
+    renewalPercentThreshold: 0.49
+  instance:
+    hostname: discovery
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://discovery:${server.port}/eureka/
