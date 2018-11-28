@@ -45,6 +45,11 @@ public class BlogControler {
 	public Object getBlogList(HttpServletRequest request,@RequestBody Map params) {
 		return blogClient.getBlogList(params);
 	}
+	
+	@RequestMapping("/getBlog")
+	public Object getBlog(HttpServletRequest request) {
+		return "111";
+	}
 
 	@RequestMapping("/getBlogInf")
 	public Object getBlogInf(HttpServletRequest request,@RequestBody Map params) {

@@ -116,7 +116,7 @@ public class UrlFilter implements Filter {
 		list.add("rest/blog/uploadImages");
 		list.add("rest/blog/getImage");
 		list.add("webSocketServer");
-
+		list.add("rest/blog/getBlog");
 		for (int i = 0; i < list.size(); i++) {
 			String[] uriArray = URL.split(list.get(i));
 			if (uriArray.length >= 2) {
