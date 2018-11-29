@@ -1,0 +1,201 @@
+.cuap-header {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    z-index: 999;
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.cuap-logo {
+    margin: 13px 0 20px 7%;
+    float: left;
+}
+.supacer{
+    font-size: 30px;
+    color:#fff;
+    font-weight: 500;
+    margin-top:-4px;
+}
+
+.cuap-logo a {
+    line-height: 2;
+}
+
+.cuap-dlzc {
+    margin: 22px 7% 20px 0;
+    float: right;
+}
+
+.cuap-header ul {
+    display: flex;
+    padding: 0 0px;
+}
+
+.cuap-header li {
+    padding: 0 0px;
+}
+
+.cuap-header a {
+    padding: 8px 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.cuap-dlzc-zc {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.cuap-dlzc-dl {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.cuap-dlzc-dl:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+    transition: border .2s ease-in-out;
+}
+
+.cuap-dlzc img {
+    width: 23px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.bodybg1 {
+    background: url(/web/images/login-1.png) no-repeat;
+    background-size:100%;
+}
+
+.bodybg2 {
+    background: url(/web/images/login-2.png) no-repeat;
+}
+
+.bodybg3 {
+    background: url(/web/images/login-3.png) no-repeat;
+}
+
+.bodybg4 {
+    background: url(/web/images/login-4.png) no-repeat;
+}
+
+.bodybg5 {
+    background: url(/web/images/login-5.png) no-repeat;
+}
+
+.login {
+    position: absolute;
+    margin-top: 65px;
+    padding: 40px 45px;
+    min-height: 450px;
+    width: 410px;
+    top: 10%;
+    right: 22%;
+    opacity: 0.8;
+    border-radius: 4px;
+    background-color: #222327;
+}
+
+.login-badge {
+    text-align: center;
+    padding: 25px;
+}
+
+.login-badge span:first-child {
+    color: #fff;
+    font-size: 33px;
+}
+
+.login-badge span:last-child {
+    color: #fff;
+    font-size: 24px;
+}
+
+.login-title {
+    text-align: right;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+    height: 30px;
+}
+
+.login-field {
+    color: #fff;
+    height: 53px;
+    padding: 12px 10px;
+}
+.hr{
+    border-bottom: 1px solid white;
+}
+.login-field * {
+    font-size: 16px !important;
+}
+
+.login-field:nth-last-child(3) {
+    border-bottom: none;
+}
+
+.login-field .ant-input {
+    border: none;
+    width: 98%;
+    color: #fff;
+    margin: 0 5px;
+    background-color: transparent !important;
+}
+
+.login-field .ant-input:hover,
+.login-field .ant-input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.login-field .ant-checkbox-wrapper {
+    padding: 4px 0;
+}
+
+.login-button {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.login-button button {
+    height: 50px;
+    width: 100%;
+    color: #000;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.login-link label {
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+}
+
+.login-message {
+    display: none;
+    padding-top: 20px;
+}
+
+.login-message-text {
+    position: relative;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    border-top: 1px solid white;
+}
+
+.login-message-text .anticon-close-circle {
+    position: absolute;
+    top: -10px;
+    left: 45%;
+    width: 40px;
+    color: red;
+    font-size: 20px;
+    background-color: #222327;
+}

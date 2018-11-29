@@ -1,0 +1,64 @@
+@float_left:left;
+@float_right:right;
+.box-mask {
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.box-mask_hidden {
+  display: none;
+}
+
+.catalog_modal {
+  z-index: 1000;
+  width: 500px;
+  min-height: 200px;
+  background: rgba(40, 43, 45, 0.8);
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.catalog_close {
+  float: @float_right;
+  margin-right: -1px;
+  font-size: 31px;
+  color: #f50;
+  cursor: pointer;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.catalog_close:hover {
+  color: #ff1531;
+/*  -webkit-animation-name: tada;
+  animation-name: tada*/
+}
+
+.catalog_modal_ul {
+  padding: 20px 20px 10px 20px;
+}
+
+.catalog_modal_ul li {
+  width:120px;
+  height:25px;
+  background-color: #0b97c4;
+  margin-right: 15px;
+  color:#fff;
+  cursor: pointer;
+  margin-bottom:15px;
+  text-align:center;
+  border-radius: 5px;
+  padding-top: 1px;
+  font-size: 15px;
+}
+.catalog_modal_ul li:hover {
+  color: #ff8a52;
+  font-weight:bold;
+}
