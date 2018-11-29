@@ -1,4 +1,4 @@
-package com.wmz.punch_config;
+package com.wmz.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
