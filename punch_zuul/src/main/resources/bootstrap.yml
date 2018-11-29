@@ -10,6 +10,9 @@ management:
       enabled: false
 zuul:
   addHostHeader: true
+  host:
+    ConnectTimeOutMillis: 6000
+    SocketTimeOutMillis: 6000
   routes:
     ##简单路由配置
     simpleRouter:
@@ -21,4 +24,10 @@ zuul:
     service-web:
       path: /zull/**
       serviceId: service-web
+ribbon:
+  MaxAutoRetiresNextServer: 2  #换服务次数
+  MaxAutoRetires: 2  #重试次数
+  ConnectTimeOut: 6000
+  ReadTimeOut: 6000
+  OkToRetureOnAllOperations: true
   
