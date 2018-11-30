@@ -1,0 +1,22 @@
+server:
+  port: 8766
+spring:
+  profiles:
+    active:  test
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yjmyzz/spring-cloud-config-repository
+management:
+    security:
+      enabled: false
+ribbon:
+  MaxAutoRetiresNextServer: 2  #换服务次数
+  MaxAutoRetires: 2  #重试次数
+  ConnectTimeOut: 6000
+  ReadTimeOut: 6000
+  OkToRetureOnAllOperations: true
+  
