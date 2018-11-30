@@ -9,12 +9,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yjmyzz/spring-cloud-config-repository
+          uri: https://github.com/wangmengzhong/supConfig
 management:
     security:
       enabled: false
 ribbon:
-  MaxAutoRetiresNextServer: 2  #换服务次数
+  MaxAutoRetiresNextServer: 2  #换服务次数  https://github.com/wangmengzhong/supConfig
   MaxAutoRetires: 2  #重试次数
   ConnectTimeOut: 6000
   ReadTimeOut: 6000
