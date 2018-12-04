@@ -1,4 +1,4 @@
-package com.wmz.web.filter;
+package com.wmz.punch_zuul.filter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,13 +20,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
 import com.wmz.common.entity.User;
-import com.wmz.web.redis.CacheService;
-import com.wmz.web.util.TokenUtil;
+import com.wmz.punch_zuul.util.TokenUtil;
 
 public class UrlFilter implements Filter {
 
-	@Autowired
-	CacheService cacheService;
+	
 
 	@Autowired
 	TokenUtil tokenUtil;
@@ -47,7 +45,7 @@ public class UrlFilter implements Filter {
 
 		StringBuffer url = req.getRequestURL();
 		url.append("#");
-		//System.out.println("url:" + url + "---ip: " + getIp(req) + "---mac: " );
+		System.out.println("punch_zull--- url:" + url + "---ip: " + getIp(req) + "---mac: " );
 
 		if (isWhitURL(url.toString())) {
 			chain.doFilter(request, response);

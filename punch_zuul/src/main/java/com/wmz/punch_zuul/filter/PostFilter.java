@@ -14,7 +14,7 @@ public class PostFilter extends ZuulFilter{
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
  
-		System.out.println("------- PostFilter run --------");
+		System.out.println("----- PostFilter run --------\n");
 		
 		return null;
 	}

@@ -11,7 +11,7 @@ public class PreFilter extends ZuulFilter {
 	public Object run() {
 		RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        System.out.println("------- PreFilter run-------");
+        System.out.println("--- PreFilter run-------URL："+request.getRequestURL());
         return null;
         /*String username = request.getParameter("password");
         if(null != username && username.equals("123456")) {

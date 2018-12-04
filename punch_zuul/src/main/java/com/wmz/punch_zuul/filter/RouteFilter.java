@@ -8,7 +8,7 @@ import com.netflix.zuul.ZuulFilter;
 public class RouteFilter extends ZuulFilter{
 	@Override
 	public Object run() {
-		System.out.println("------- RouteFilter run-------");
+		System.out.println("---- RouteFilter run-------");
         return null;
 	}
  
