@@ -11,8 +11,8 @@ management:
 zuul:
   addHostHeader: true
   host:
-    ConnectTimeOutMillis: 6000
-    SocketTimeOutMillis: 6000
+    ConnectTimeoutMillis: 10000
+    SocketTimeoutMillis: 10000
   routes:
     ##简单路由配置
     simpleRouter:
@@ -27,7 +27,10 @@ zuul:
 ribbon:
   MaxAutoRetiresNextServer: 2  #换服务次数
   MaxAutoRetires: 2  #重试次数
-  ConnectTimeOut: 6000
-  ReadTimeOut: 6000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  SocketTimeout: 10000
   OkToRetureOnAllOperations: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
   

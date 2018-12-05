@@ -134,8 +134,9 @@ public class PreFilter extends ZuulFilter {
 	
 	public static void returnError(RequestContext ctx) {
 		ctx.setSendZuulResponse(false);
-        ctx.setResponseStatusCode(401);
-        ctx.setResponseBody("{\"result\":\"password is not correct!\"}");
+        ctx.setResponseStatusCode(200);
+        ctx.getResponse().setContentType("application/json;charset=UTF-8");
+        ctx.setResponseBody("{\"successful\":" + false + ",\"sessionOver\":" + true + "}");
         ctx.set("isSuccess", false);
 	}
 

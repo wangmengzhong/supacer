@@ -18,17 +18,11 @@ spring:
 ribbon:
   MaxAutoRetiresNextServer: 2  #换服务次数
   MaxAutoRetires: 2  #重试次数
-  ConnectTimeOut: 6000
-  ReadTimeOut: 6000
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+  SocketTimeout: 10000
   OkToRetureOnAllOperations: true
 hystrix:
   enabled:  true  #熔断开启
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 6000
-          strategy: SEMAPHORE
-
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
 
