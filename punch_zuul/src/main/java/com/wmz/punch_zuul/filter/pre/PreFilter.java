@@ -95,7 +95,6 @@ public class PreFilter extends ZuulFilter {
 		list.add("rest/blog/uploadImages");
 		list.add("rest/blog/getImage");
 		list.add("webSocketServer");
-		list.add("rest/blog/getBlog");
 		list.add("/web/images");
 		
 		for (int i = 0; i < list.size(); i++) {
