@@ -1,4 +1,4 @@
-package com.wmz.punch_zuul.filter;
+package com.wmz.punch_zuul.filter.post;
 
 import javax.servlet.http.HttpServletRequest;
 
