@@ -31,6 +31,6 @@ ribbon:
   ConnectTimeout: 10000
   SocketTimeout: 10000
   OkToRetureOnAllOperations: true
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 
   
