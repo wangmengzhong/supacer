@@ -1,0 +1,13 @@
+server:
+  port: 8766
+spring:
+  rabbitmq:
+    host: 47.93.252.27
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: test
+  application:
+    name: service-stream
+  
