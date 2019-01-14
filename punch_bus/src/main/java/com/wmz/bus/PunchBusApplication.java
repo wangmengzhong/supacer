@@ -9,4 +9,6 @@ public class PunchBusApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PunchBusApplication.class, args);
 	}
+
 }
+
