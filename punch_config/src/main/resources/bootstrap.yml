@@ -1,5 +1,5 @@
 server:
-  port: 8766
+  port: 8768
 spring:
   profiles:
     active:  test
@@ -10,6 +10,8 @@ spring:
       server:
         git:
           uri: https://github.com/wangmengzhong/supConfig
+          searchPaths: auth
+        label: master
 management:
     security:
       enabled: false
