@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import com.netflix.servo.util.Strings;
-
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
