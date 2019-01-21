@@ -88,7 +88,6 @@ public class PreFilter extends ZuulFilter {
 	 */
 	private boolean isWhitURL(String URL) {
 		boolean flag = false;
-		// 白名单
 		List<String> list = new ArrayList<String>();
 
 		list.add("rest/system/userLogin");// 登录
