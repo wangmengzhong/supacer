@@ -2,7 +2,7 @@ server:
   port: 8768
 spring:
   profiles:
-    active:  test
+    active: test
   application:
     name: config-server
   cloud:
