@@ -3,10 +3,10 @@ import reqwest from 'reqwest'
 import pAjax from '../common/pAjax';
 const Global = {
     history:hashHistory,
-    baseUrl: "/zull/web/",
+    baseUrl: "/web/",
     //wsUrl:"192.168.58.131:8080/sup/",
     wsUrl: "localhost:80/web/",
-    imgUrl: "/zull/web/images/",
+    imgUrl: "/web/images/",
     strModulus: "abf9ce9c3f6dc3fa472552a56477d89fa5948b042ba4f0fd9ed972701c8880d70e9865465696ec30036ce4fef7772e638b87118bd565982aed334629e71445e5",
     pukExponent: "10001",
     ajax:pAjax,
