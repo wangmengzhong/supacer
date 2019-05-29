@@ -2,7 +2,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import reqwest from 'reqwest';
-import {Table, Icon, Button} from 'antd';
+import {Table, Icon, Button,Spin} from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import * as actions from '../redux/actions';
 import Global from '../../common/global';
@@ -90,7 +90,9 @@ class BlogInf extends React.Component {
                     </div>
                 </QueueAnim>
                 <div ref="content" className="blog_content">
-
+                    <div className="loadDiv">
+                        <Spin />
+                    </div>
                 </div>
             </div>
         )
