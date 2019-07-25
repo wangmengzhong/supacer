@@ -6,8 +6,11 @@ spring:
   application:
     name: api-zull
 management:
-    security:
-      enabled: false
+  security:
+    enabled: false
+logging:
+  level:
+    com.netflix: DEBUG
 zuul:
   addHostHeader: true
   host:
@@ -23,7 +26,7 @@ zuul:
       url: http://localhost/web/rest/blog/
     service-web:
       path: /zull/**
-      serviceId: service-web
+      url: http://localhost/web/
 ribbon:
   MaxAutoRetiresNextServer: 2  #换服务次数
   MaxAutoRetires: 2  #重试次数
