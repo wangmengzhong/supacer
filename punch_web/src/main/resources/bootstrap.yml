@@ -1,38 +1,18 @@
-upLoadPath: /home/wmz/cpc_up/
-wss:
-  server:
-    port: 80
-    host: localhost
-mybatis:
-  config-locations: classpath:mybatis/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.wmz.web.entity
+eureka:
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 80
-  contextPath: /web
 spring:
-  profiles:
-    active:  test
   application:
     name: service-web
-  rabbitmq:
-    host: 47.93.252.27
-    port: 5672
-    username: guest
-    password: guest
   cloud:
-    stream:
-      bindings:
-        input:
-          destination: my-test-channel
-ribbon:
-  MaxAutoRetiresNextServer: 2  #换服务次数
-  MaxAutoRetires: 2  #重试次数
-  ConnectTimeout: 10000
-  ReadTimeout: 10000
-  SocketTimeout: 10000
-  OkToRetureOnAllOperations: true
-hystrix:
-  enabled:  true  #熔断开启
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
-
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: test
+      name: web

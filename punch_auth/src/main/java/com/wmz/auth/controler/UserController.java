@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -103,6 +104,14 @@ public class UserController extends DefaultController<User> {
 	@RequestMapping(value = "/delete/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		userMapper.delete(id);
+	}
+	
+	@Value("${word}")
+	private String word;
+	
+	@RequestMapping("/test")
+	public Object test(HttpServletRequest request) {
+		return word;
 	}
 
 }

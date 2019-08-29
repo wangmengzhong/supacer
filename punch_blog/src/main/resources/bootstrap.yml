@@ -1,26 +1,18 @@
-mybatis:
-  config-locations: classpath:mybatis/mybatis-config.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.wmz.blog.entity
+eureka:
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8764
 spring:
-  profiles:
-    active:  test
   application:
     name: service-blog
-ribbon:
-  MaxAutoRetiresNextServer: 2  #换服务次数
-  MaxAutoRetires: 2  #重试次数
-  ConnectTimeOut: 6000
-  ReadTimeOut: 6000
-  OkToRetureOnAllOperations: true
-hystrix:
-  enabled:  true  #熔断开启
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 6000
-          strategy: SEMAPHORE
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: test
+      name: blog

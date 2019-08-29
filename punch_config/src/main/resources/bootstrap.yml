@@ -10,7 +10,7 @@ spring:
       server:
         git:
           uri: https://github.com/wangmengzhong/supConfig
-          searchPaths: auth
+          search-paths: auth,blog,web
         label: master
 management:
     security:
