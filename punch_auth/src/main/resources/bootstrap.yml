@@ -5,7 +5,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8763
+  port: 8769
 spring:
   application:
     name: service-auth
@@ -16,3 +16,19 @@ spring:
         service-id: config-server
       profile: test
       name: auth
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.8.128
+    port: 5672
+    username: guest
+    password: guest
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

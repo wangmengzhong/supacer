@@ -12,9 +12,18 @@ spring:
           uri: https://github.com/wangmengzhong/supConfig
           search-paths: auth,blog,web
         label: master
+  rabbitmq:
+    host: 192.168.8.128
+    port: 5672
+    username: guest
+    password: guest
 management:
-    security:
-      enabled: false
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 ribbon:
   MaxAutoRetiresNextServer: 2  #换服务次数  https://github.com/wangmengzhong/supConfig
   MaxAutoRetires: 2  #重试次数

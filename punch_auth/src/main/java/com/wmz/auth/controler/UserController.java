@@ -11,6 +11,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ import com.wmz.common.util.ResultUtil;
 
 @RestController
 @RequestMapping("/auth")
+@RefreshScope
 public class UserController extends DefaultController<User> {
 
 	@Autowired
