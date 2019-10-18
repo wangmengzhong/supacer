@@ -10,6 +10,7 @@
 	<name>punch</name>
 
 	<modules>
+		<module>pom_common</module>
 		<module>punch_common</module>
 		<module>punch_config</module>
 		<module>punch_auth</module>
