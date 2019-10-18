@@ -5,7 +5,7 @@
 
 	<groupId>com.wmz</groupId>
 	<artifactId>punch_web</artifactId>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>punch_web</name>
