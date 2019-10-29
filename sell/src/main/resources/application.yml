@@ -1,0 +1,21 @@
+server:
+  context-path: /sell
+  port: 8080
+spring:
+  datasource:
+    #    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123
+    url: jdbc:mysql://47.93.252.27:3306/sell?useSSL=false&serverTimeZone=UTC&useOldAliasMetadataBehavior=true
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+
+#定义网址
+projectUrl:
+  sell: localhost:8080
+
