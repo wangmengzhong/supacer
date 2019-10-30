@@ -1,0 +1,18 @@
+eureka:
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8770
+spring:
+  application:
+    name: service-sell
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: test
+      name: sell
