@@ -1,34 +1,24 @@
 package com.wmz.punchSell.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.wmz.punchSell.enums.ProductStatusEnum;
+
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
-
+import java.util.Date;
+import com.wmz.punchSell.utils.EnumUtil;
 /**
- * 编程小石头：2501902696（微信）
+ * 商品
  */
+@Entity
+@DynamicUpdate
+@DynamicInsert
 public class Product {
-
-
-    private String productId;
-    
-    /** 名字. */
-    private String productName;
-
-    /** 单价. */
-    private BigDecimal productPrice;
-
-    /** 库存. */
-    private Integer productStock;
-
-    /** 描述. */
-    private String productDescription;
-
-    /** 小图. */
-    private String productIcon;
-
-    /** 类目编号. */
-    private Integer categoryType;
 
     public String getProductId() {
 		return productId;
@@ -78,6 +68,14 @@ public class Product {
 		this.productIcon = productIcon;
 	}
 
+	public Integer getProductStatus() {
+		return productStatus;
+	}
+
+	public void setProductStatus(Integer productStatus) {
+		this.productStatus = productStatus;
+	}
+
 	public Integer getCategoryType() {
 		return categoryType;
 	}
@@ -86,5 +84,52 @@ public class Product {
 		this.categoryType = categoryType;
 	}
 
-	
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	@Id
+    private String productId;
+
+    /** 名字. */
+    private String productName;
+
+    /** 单价. */
+    private BigDecimal productPrice;
+
+    /** 库存. */
+    private Integer productStock;
+
+    /** 描述. */
+    private String productDescription;
+
+    /** 小图. */
+    private String productIcon;
+
+    /** 状态, 0正常1下架. */
+    private Integer productStatus = ProductStatusEnum.UP.getCode();
+
+    /** 类目编号. */
+    private Integer categoryType;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum() {
+        return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
+    }
 }
