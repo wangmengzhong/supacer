@@ -1,7 +1,7 @@
 package com.wmz.punchSell.dao;
 
-import com.wmz.punchSell.domain.Product;
+import com.wmz.punchSell.domain.ProductInfo;
 
-public interface ProductDao extends BaseDao<Product>{
+public interface ProductDao extends BaseDao<ProductInfo>{
 
 }

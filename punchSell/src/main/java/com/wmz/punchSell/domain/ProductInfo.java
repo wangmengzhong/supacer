@@ -18,7 +18,7 @@ import com.wmz.punchSell.utils.EnumUtil;
 @Entity
 @DynamicUpdate
 @DynamicInsert
-public class Product {
+public class ProductInfo {
 
     public String getProductId() {
 		return productId;

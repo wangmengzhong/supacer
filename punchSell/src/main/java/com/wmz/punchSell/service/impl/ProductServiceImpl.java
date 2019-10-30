@@ -3,7 +3,7 @@ package com.wmz.punchSell.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.wmz.punchSell.dao.ProductDao;
-import com.wmz.punchSell.domain.Product;
+import com.wmz.punchSell.domain.ProductInfo;
 import com.wmz.punchSell.service.IProductService;
 
 /**
@@ -11,7 +11,7 @@ import com.wmz.punchSell.service.IProductService;
 * 创建时间:2018-05-24
 **/
 @Service
-public class ProductServiceImpl extends ServiceImpl<ProductDao,Product> implements IProductService{
+public class ProductServiceImpl extends ServiceImpl<ProductDao,ProductInfo> implements IProductService{
 
 
 }

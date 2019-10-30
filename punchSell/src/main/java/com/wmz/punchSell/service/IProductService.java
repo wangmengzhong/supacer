@@ -1,7 +1,7 @@
 package com.wmz.punchSell.service;
 
-import com.wmz.punchSell.domain.Product;
+import com.wmz.punchSell.domain.ProductInfo;
 
-public interface IProductService extends IService<Product>{
+public interface IProductService extends IService<ProductInfo>{
 
 }

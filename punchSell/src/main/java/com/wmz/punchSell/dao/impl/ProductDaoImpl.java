@@ -3,9 +3,9 @@ package com.wmz.punchSell.dao.impl;
 import org.springframework.stereotype.Repository;
 
 import com.wmz.punchSell.dao.ProductDao;
-import com.wmz.punchSell.domain.Product;
+import com.wmz.punchSell.domain.ProductInfo;
 
 @Repository
-public class ProductDaoImpl extends BaseDaoImpl<Product> implements ProductDao{
+public class ProductDaoImpl extends BaseDaoImpl<ProductInfo> implements ProductDao{
 
 }
