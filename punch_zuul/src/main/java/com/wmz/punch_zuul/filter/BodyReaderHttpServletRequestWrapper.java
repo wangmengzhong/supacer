@@ -20,21 +20,21 @@ public class BodyReaderHttpServletRequestWrapper extends  HttpServletRequestWrap
 	  
     public BodyReaderHttpServletRequestWrapper(HttpServletRequest request) throws IOException {  
         super(request);  
-        System.out.println("-------------------------------------------------");    
-        Enumeration e = request.getHeaderNames()   ;    
-         while(e.hasMoreElements()){    
-             String name = (String) e.nextElement();    
-             String value = request.getHeader(name);    
-             //System.out.println(name+" = "+value);    
-                 
-         }    
-        body = HttpHelper.getBodyString(request).getBytes(Charset.forName("UTF-8"));  
-    }  
-  
+        System.out.println("-------------------------------------------------");
+        Enumeration e = request.getHeaderNames();    
+         while(e.hasMoreElements()){
+             String name = (String) e.nextElement();   
+             String value = request.getHeader(name);
+             //System.out.println(name+" = "+value);
+             
+         }
+        body = HttpHelper.getBodyString(request).getBytes(Charset.forName("UTF-8"));
+    }
+
     @Override  
-    public BufferedReader getReader() throws IOException {  
-        return new BufferedReader(new InputStreamReader(getInputStream()));  
-    }  
+    public BufferedReader getReader() throws IOException {
+        return new BufferedReader(new InputStreamReader(getInputStream()));
+    }
   
     @Override  
     public ServletInputStream getInputStream() throws IOException {  
