@@ -13,7 +13,7 @@ spring:
           search-paths: auth,blog,web,sell
         label: master
   rabbitmq:
-    host: 192.168.8.128
+    host: 49.233.170.222
     port: 5672
     username: guest
     password: guest

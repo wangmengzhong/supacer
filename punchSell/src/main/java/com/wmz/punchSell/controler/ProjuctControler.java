@@ -25,6 +25,7 @@ public class ProjuctControler {
 	@Autowired
     private IProductCategoryService productCategoryService;
 	
+	@SuppressWarnings("unused")
 	@RequestMapping("/getProjucts")
 	public Object getUsers(HttpServletRequest request, @RequestParam Map<String, Object> params) {
 		

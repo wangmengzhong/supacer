@@ -16,7 +16,7 @@ module.exports = {
         path: path.join(__dirname, './build'),
         filename: '[name].js', //打包后输出文件的文件名
         chunkFilename: '[name].js',
-        publicPath: '/web/'  //启动本地服务后的根目录
+        publicPath: '/zull/'  //启动本地服务后的根目录
     },
 
     module: {

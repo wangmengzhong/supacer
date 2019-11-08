@@ -16,3 +16,12 @@ spring:
         service-id: config-server
       profile: test
       name: blog
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 49.233.170.222
+    port: 5672
+    username: guest
+    password: guest

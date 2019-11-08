@@ -9,6 +9,11 @@ server:
 spring:
   application:
     name: service-web
+  rabbitmq:
+    host: 49.233.170.222
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       discovery:
