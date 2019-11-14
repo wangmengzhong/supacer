@@ -12,19 +12,19 @@ import org.hibernate.annotations.DynamicUpdate;
 public class ProductCategory {
 	
 		@Id
-	    private Integer categoryId;
+	    private String categoryId;
 
 		/** 类目名字. */
 	    private String categoryName;
 
 	    /** 类目编号. */
-	    private Integer categoryType;
+	    private String categoryType;
 	    
-	    public Integer getCategoryId() {
+	    public String getCategoryId() {
 			return categoryId;
 		}
 
-		public void setCategoryId(Integer categoryId) {
+		public void setCategoryId(String categoryId) {
 			this.categoryId = categoryId;
 		}
 
@@ -36,11 +36,11 @@ public class ProductCategory {
 			this.categoryName = categoryName;
 		}
 
-		public Integer getCategoryType() {
+		public String getCategoryType() {
 			return categoryType;
 		}
 
-		public void setCategoryType(Integer categoryType) {
+		public void setCategoryType(String categoryType) {
 			this.categoryType = categoryType;
 		}
 

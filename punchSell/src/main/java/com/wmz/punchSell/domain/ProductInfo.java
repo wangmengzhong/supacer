@@ -42,7 +42,7 @@ public class ProductInfo {
     private Integer productStatus = ProductStatusEnum.UP.getCode();
 
     /** 类目编号. */
-    private Integer categoryType;
+    private String categoryType;
 
     private Date createTime;
 
@@ -104,11 +104,11 @@ public class ProductInfo {
 		this.productStatus = productStatus;
 	}
 
-	public Integer getCategoryType() {
+	public String getCategoryType() {
 		return categoryType;
 	}
 
-	public void setCategoryType(Integer categoryType) {
+	public void setCategoryType(String categoryType) {
 		this.categoryType = categoryType;
 	}
 
