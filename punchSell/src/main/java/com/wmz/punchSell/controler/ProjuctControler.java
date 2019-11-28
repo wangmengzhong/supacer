@@ -58,7 +58,7 @@ public class ProjuctControler {
 	}
 	
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	@RequestMapping("/getProjucts")
 	public Object getProjucts(HttpServletRequest request, @RequestParam Map<String, Object> params) {
 		
@@ -67,5 +67,12 @@ public class ProjuctControler {
 		List groups= new ArrayList();
 		
 		return productList;
+	}
+	
+	@RequestMapping("/getOne")
+	public Object getOne(HttpServletRequest request, @RequestParam Map<String, Object> params) {
+		
+		ProductInfo p=productService.findOne(params.get("id").toString());
+		return p;
 	}
 }
