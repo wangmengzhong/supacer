@@ -1,4 +1,4 @@
-package com.wmz.punchSell.dao.impl;
+package com.wmz.common.dao.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -33,7 +33,7 @@ import com.wmz.common.util.SQLWrapper;
 import com.wmz.common.util.Wrapper;
 
 /***
-**create by yinchong
+**create by wmz
 */
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
