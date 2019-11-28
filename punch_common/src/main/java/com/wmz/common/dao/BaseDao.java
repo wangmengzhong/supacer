@@ -1,10 +1,11 @@
-package com.wmz.punchSell.dao;
+package com.wmz.common.dao;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.wmz.punchSell.utils.Wrapper;
+import com.wmz.common.util.Wrapper;
+
 
 /**
  *create by yinchong

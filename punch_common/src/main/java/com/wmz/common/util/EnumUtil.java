@@ -1,6 +1,6 @@
-package com.wmz.punchSell.utils;
+package com.wmz.common.util;
 
-import com.wmz.punchSell.enums.CodeEnum;
+import com.wmz.common.enums.CodeEnum;
 
 /**
  * 编程小石头：2501902696（微信）

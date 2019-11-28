@@ -1,6 +1,23 @@
 package com.wmz.punchSell.dao.impl;
 
-import org.hibernate.transform.Transformers;
+import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -8,25 +25,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.wmz.punchSell.dao.BaseDao;
-import com.wmz.punchSell.dao.PageBean;
-import com.wmz.punchSell.dao.ReflectUtils;
-import com.wmz.punchSell.utils.HQLWrapper;
-import com.wmz.punchSell.utils.SQLWrapper;
-import com.wmz.punchSell.utils.Wrapper;
-
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.math.BigInteger;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.*;
+import com.wmz.common.dao.BaseDao;
+import com.wmz.common.dao.PageBean;
+import com.wmz.common.dao.ReflectUtils;
+import com.wmz.common.util.HQLWrapper;
+import com.wmz.common.util.SQLWrapper;
+import com.wmz.common.util.Wrapper;
 
 /***
 **create by yinchong

@@ -1,13 +1,14 @@
-package com.wmz.punchSell.service.impl;
+package com.wmz.common.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.wmz.punchSell.dao.BaseDao;
-import com.wmz.punchSell.service.IService;
-import com.wmz.punchSell.utils.Wrapper;
+import com.wmz.common.dao.BaseDao;
+import com.wmz.common.service.IService;
+import com.wmz.common.util.Wrapper;
+
 
 public class ServiceImpl<M extends  BaseDao<T>,T> implements IService<T>{
 
@@ -83,4 +84,10 @@ public class ServiceImpl<M extends  BaseDao<T>,T> implements IService<T>{
     public <T2> List<T2> findWrapper(Wrapper wrapper, Class<T2> clazz) {
         return baseDao.findWrapper(wrapper,clazz);
     }
+
+	@Override
+	public T findOne(Serializable id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

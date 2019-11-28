@@ -1,10 +1,11 @@
-package com.wmz.punchSell.service;
+package com.wmz.common.service;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.wmz.punchSell.utils.Wrapper;
+import com.wmz.common.util.Wrapper;
+
 
 /**
  * 基础service
@@ -48,6 +49,13 @@ public interface IService<T> {
      * @param datas
      */
     void batchUpdate(List<T> datas);
+    
+    /**
+     * 根据id查询数据
+     * @param id
+     * @return
+     */
+    T findOne(Serializable id);
 
     /**
      * 显示所有

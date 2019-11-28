@@ -1,4 +1,4 @@
-package com.wmz.punchSell.dao;
+package com.wmz.common.dao;
 
 import java.io.Serializable;
 import java.util.List;

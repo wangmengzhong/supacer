@@ -1,6 +1,5 @@
-package com.wmz.punchSell.enums;
+package com.wmz.common.enums;
 
-import lombok.Getter;
 
 /**
  * 编程小石头：2501902696（微信）

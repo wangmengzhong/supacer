@@ -2,6 +2,7 @@ package com.wmz.punchSell.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import com.wmz.common.service.impl.ServiceImpl;
 import com.wmz.punchSell.dao.ProductDao;
 import com.wmz.punchSell.domain.ProductInfo;
 import com.wmz.punchSell.service.IProductService;

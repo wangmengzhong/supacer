@@ -1,4 +1,4 @@
-package com.wmz.punchSell.utils;
+package com.wmz.common.util;
 
 import java.util.Collection;
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.wmz.punchSell.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.wmz.punchSell.enums.ProductStatusEnum;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
@@ -11,7 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
-import com.wmz.punchSell.utils.EnumUtil;
+
+import com.wmz.common.enums.ProductStatusEnum;
+import com.wmz.common.util.EnumUtil;
 /**
  * 商品
  */
