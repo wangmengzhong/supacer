@@ -87,7 +87,6 @@ public class ServiceImpl<M extends  BaseDao<T>,T> implements IService<T>{
 
 	@Override
 	public T findOne(Serializable id) {
-		// TODO Auto-generated method stub
-		return null;
+		return baseDao.findOne(id);
 	}
 }
